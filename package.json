@@ -1,6 +1,6 @@
 {
-	"name": "project-skripsi",
-	"version": "0.1.0",
+	"name": "fe-admin-smil",
+	"version": "2.0.0",
 	"private": true,
 	"scripts": {
 		"serve": "vue-cli-service serve",
@@ -38,6 +38,6 @@
 		"last 2 versions",
 		"not dead"
 	],
-	"_id": "project-skripsi@0.1.0",
+	"_id": "fe-admin-smil@2.0.0",
 	"readme": "ERROR: No README data found!"
 }
