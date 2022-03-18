@@ -32,7 +32,11 @@
 
         <h2 class="page-title" :class="isMobile">{{ pageName }}</h2>
         <div class="staff-info">
-          <button class="smil-btn smil-bg-primary btn-return d-lg-block d-none">
+          <button
+            v-if="$route.name !== 'PengembalianAlat'"
+            class="smil-btn smil-bg-primary btn-return d-lg-block d-none"
+            @click="$router.push({ name: 'PengembalianAlat' })"
+          >
             Pengembalian Alat
           </button>
           <b-dropdown
@@ -61,7 +65,10 @@
             <b-dropdown-item @click="openProfile = true">
               Profile
             </b-dropdown-item>
-            <b-dropdown-item class="d-lg-none d-block">
+            <b-dropdown-item
+              class="d-lg-none d-block"
+              @click="$router.push({ name: 'PengembalianAlat' })"
+            >
               Pengembalian Alat
             </b-dropdown-item>
             <b-dropdown-item @click="openChangePassword = true">

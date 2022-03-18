@@ -113,6 +113,7 @@
                       Detail Peminjaman
                     </b-dropdown-item>
                     <b-dropdown-item
+                      v-if="listData[indexRow].pjm_status === 4"
                       @click="actionPeminjaman('pengembalian-alat', indexRow)"
                     >
                       Selesaikan Peminjaman
@@ -889,7 +890,10 @@ export default {
         if (data !== null) {
           this.selectedRowData = this.listData[data];
         }
-        alert("Action Pengembalian Alat");
+        this.$router.push({
+          name: "PengembalianAlat",
+          params: { peminjamanData: this.selectedRowData },
+        });
       } else {
         this.lihatDetail(type);
       }
