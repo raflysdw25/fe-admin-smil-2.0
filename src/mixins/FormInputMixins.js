@@ -41,14 +41,15 @@ export default {
       }
     },
     emailValidate(email) {
-      if (
-        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
-          email
-        )
-      ) {
-        return true;
+      if (email === "") {
+        return null;
+      } else {
+        const EMAIL_REGEX = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+        if (EMAIL_REGEX.test(email)) {
+          return true;
+        }
+        return false;
       }
-      return false;
     },
     formPasteConstraint(e, type) {
       if (type === "barcode-input") {

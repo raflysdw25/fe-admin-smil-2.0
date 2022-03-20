@@ -199,7 +199,7 @@ export default {
         waktuPeminjaman: waktuPeminjaman,
         keperluanPeminjaman: data.pjm_purpose,
         ruanganName:
-          data.ruangan_id !== null ? data.ruanga_model.ruangan_name : "-",
+          data.ruangan_id !== null ? data.ruangan_model.ruangan_name : "-",
         waktuPengembalian: waktuPengembalian,
         staffInCharge:
           data.nip_staff_in_charge == "" || data.nip_staff_in_charge == null

@@ -281,6 +281,7 @@
       hide-header
       no-close-on-backdrop
       no-close-on-esc
+      centered
     >
       <base-modal-alert
         :isProcess="alertInfo.isProcess"

@@ -1,5 +1,5 @@
 // Vuex
-import * as types from "@/store/types.js";
+import * as types from "@/store/types";
 export default {
   data() {
     return {};
@@ -16,8 +16,8 @@ export default {
 
           alert("User tidak memiliki akses");
           setTimeout(() => {
-            this.$router.push({ name: "LoginPeminjam" });
-            this.$store.dispatch(types.UPDATE_PEMINJAM, null);
+            this.$router.push({ name: "LoginAdmin" });
+            this.$store.dispatch(types.UPDATE_ADMIN, null);
           }, 2000);
         } else if (err && err.response) {
           if (err.response.code === 400) {

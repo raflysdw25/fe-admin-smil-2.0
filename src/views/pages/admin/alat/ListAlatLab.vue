@@ -353,6 +353,31 @@ export default {
             },
           ],
         },
+        {
+          label: "Alat Habis Pakai",
+          filter_type: "select",
+          model: "habis_pakai",
+          options: [
+            {
+              id: null,
+              name: "All",
+              value: null,
+              disabled: false,
+            },
+            {
+              id: 1,
+              name: "Habis Pakai",
+              value: 1,
+              disabled: false,
+            },
+            {
+              id: 2,
+              name: "Tidak Habis Pakai",
+              value: 2,
+              disabled: false,
+            },
+          ],
+        },
         "",
       ],
       filterData: {
@@ -361,6 +386,7 @@ export default {
         asal_pengadaan_id: null,
         alat_year: "",
         can_borrowed: null,
+        habis_pakai: null,
       },
       formFilter: [
         {
@@ -429,6 +455,31 @@ export default {
             },
           ],
         },
+        {
+          label: "Alat Habis Pakai",
+          filter_type: "select",
+          model: "habis_pakai",
+          options: [
+            {
+              id: null,
+              name: "All",
+              value: null,
+              disabled: false,
+            },
+            {
+              id: 1,
+              name: "Habis Pakai",
+              value: 1,
+              disabled: false,
+            },
+            {
+              id: 2,
+              name: "Tidak Habis Pakai",
+              value: 2,
+              disabled: false,
+            },
+          ],
+        },
       ],
       listAsalPengadaanAlat: [],
       listJenisAlat: [],
@@ -453,12 +504,17 @@ export default {
             list.can_borrowed === true
               ? { text: "Bisa Dipinjam", background: "smil-bg-success" }
               : { text: "Tidak Bisa Dipinjam", background: "smil-bg-danger" };
+          let alatHabisPakai =
+            list.habis_pakai === true
+              ? { text: "Habis Pakai", background: "smil-bg-info" }
+              : { text: "Tidak Habis Pakai", background: "smil-bg-info" };
           let rowTable = [
             list.alat_name, //Nama Alat
             list.jenis_alat_model.jenis_name, // Nama Jenis
             list.asal_pengadaan_model.asal_pengadaan_name, //Asal Pengadaan
             list.alat_year,
             alatCanBorrowed,
+            alatHabisPakai,
             indexList, //Index Data
           ];
 
