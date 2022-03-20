@@ -135,7 +135,7 @@
       >
         Informasi Peminjam
       </button>
-      <template v-if="dataPeminjaman.pjm_status === 1">
+      <template v-if="dataPeminjaman.pjm_status === 1 && isKaLab">
         <button
           class="smil-btn smil-bg-danger"
           @click="actionPeminjaman('approval', false)"
@@ -184,6 +184,9 @@ export default {
     };
   },
   computed: {
+    adminData() {
+      return this.$store.state.admin;
+    },
     infoPeminjam() {
       let data = this.dataPeminjaman;
       let waktuPeminjaman = this.formatDate(data.created_date, "DD MMMM YYYY");
@@ -243,6 +246,9 @@ export default {
           (status) => status.id === this.dataPeminjaman.pjm_status
         );
       }
+    },
+    isKaLab() {
+      return this.adminData.jabatan_id === 2;
     },
   },
   methods: {

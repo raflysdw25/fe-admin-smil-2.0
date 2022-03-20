@@ -373,8 +373,21 @@ export default {
           {
             id: 4,
             text: "Peminjaman Alat",
-            to: "ListPeminjamanAlat",
             icon: { iconName: "scanner", size: 32, color: "#fff" },
+            child: [
+              {
+                id: 1,
+                text: "List Peminjaman Alat",
+                to: "ListPeminjamanAlat",
+                activeMenu: "list",
+              },
+              {
+                id: 2,
+                text: "List Booking Pengembalian",
+                to: "ListBookingPengembalian",
+                activeMenu: "booking-pengembalian",
+              },
+            ],
             activeMenu: "peminjaman",
           },
           {
